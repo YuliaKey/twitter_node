@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "starts": "PORT=4000 nodemon app.js"
+    "starts": "NODE_ENV=dev nodemon app.js",
+    "starts:prod": "NODE_ENV=prod nodemon app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "errorhandler": "^1.5.1",
     "express": "^4.18.2",
     "mongoose": "^6.9.1",
     "morgan": "^1.10.0",
