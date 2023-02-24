@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "sass": "sass sass/style.scss:public/css/style.css",
+    "watch": "sass --watch sass/style.scss:public/css/style.css",
     "starts": "NODE_ENV=dev nodemon app.js",
     "starts:prod": "NODE_ENV=prod nodemon app.js"
   },
@@ -16,6 +18,7 @@
     "mongoose": "^6.9.1",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.20",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "sass": "^1.58.3"
   }
 }

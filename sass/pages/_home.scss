@@ -1,0 +1,7 @@
+.content {
+    height: 85vh;
+    background-color: white;
+
+    @include flex($align: flex-start);
+
+}
