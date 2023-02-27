@@ -1,6 +1,6 @@
 const {app} = require('../app');
 const session = require('express-session');
-const mongoStore = require('connect-mongo');
+const MongoStore = require('connect-mongo');
 
 // middleware qui serve pour creer une session
 app.use(session({
