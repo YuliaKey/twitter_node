@@ -2,7 +2,7 @@ const {app} = require('../app');
 const passport = require('passport');
 
 const LocalStrategy = require('passport-local').Strategy;
-const findUserByEmail = require('../queries/user.queries');
+const {findUserByEmail, findUserById} = require('../queries/user.queries');
 
 app.use(passport.initialize()); 
 app.use(passport.session());

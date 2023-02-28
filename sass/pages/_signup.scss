@@ -3,11 +3,20 @@ section {
 
     @include flex;
 
+    @include xs {
+        padding: 15px;
+        margin-top: 2rem;
+    }
+
     .content-box {
         padding: 30px;
         width: 30%;
         border: 1px solid $text-color;
         border-radius: 5px;
+
+        @include xs {
+            width: 100%;
+        }
 
         .form-box {
             width: 100%;
@@ -25,6 +34,4 @@ section {
             }
         }
     }
-
-
 }
