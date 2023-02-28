@@ -9,6 +9,10 @@ exports.findAllTweets = () => {
     return Tweet.find({}).exec();
 }
 
+exports.findTweetAndEdit = (tweetId) => {
+    return Tweet.findByIdAndUpdate(tweetId).exec();
+}
+
 exports.findTweetAndDelete = (tweetId) => {
     return Tweet.findByIdAndDelete(tweetId).exec();
 }

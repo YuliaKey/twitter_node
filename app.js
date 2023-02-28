@@ -12,7 +12,8 @@ const PORT = process.env.PORT || 3000;
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
-require('./config/session.config')
+require('./config/session.config');
+require('./config/passport.config');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
