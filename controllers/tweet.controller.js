@@ -30,7 +30,11 @@ exports.displayTweet = async (req, res, next) => {
     try {
         const tweetId = req.params.tweetId;
         const tweet = await findTweetById(tweetId);
-        res.render('tweets/tweet-edit', { tweet, isAuthenticated: req.isAuthenticated(), currentUser: req.user });
+        if(tweet.author._id === req.user._id) {
+            res.render('tweets/tweet-edit', { tweet, isAuthenticated: req.isAuthenticated(), currentUser: req.user });
+        } else {
+            res.redirect('/')
+        }
     } catch (error) {
         next(error)
     }
