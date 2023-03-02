@@ -8,7 +8,6 @@ const { ensureAuthenticated } = require("../config/security.config")
 router.use('/tweet', ensureAuthenticated, tweetRoute)
 router.use('/user', userRoute)
 router.use('/auth', authRoute)
-
 router.get('/', tweetList)
 
 

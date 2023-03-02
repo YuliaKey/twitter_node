@@ -1,4 +1,4 @@
-const { createNewTweet, findAllTweets, findTweetById, findTweetAndDelete, findTweetAndUpdate } = require("../queries/tweet.queries")
+const { createNewTweet, findAllTweets, findTweetById, findTweetAndDelete, findTweetAndUpdate, getCurrentUserTweetsWithFollowings } = require("../queries/tweet.queries")
 
 
 exports.createTweet = async (req, res, next) => { 
@@ -15,12 +15,12 @@ exports.createTweet = async (req, res, next) => {
 
 exports.tweetList = async (req, res, next) => {
     try {
-        const tweets = await findAllTweets();
-        res.render('tweets/tweet-list', { 
-            tweets, 
-            isAuthenticated: req.isAuthenticated(),
-            currentUser: req.user 
-        })
+        // if(!req.user){
+            const tweets = await findAllTweets();
+            res.render('tweets/tweet-list', { tweets, isAuthenticated: req.isAuthenticated(), currentUser: req.user })
+        // }
+        // const tweets = await getCurrentUserTweetsWithFollowings(req.user);
+        // res.render('tweets/tweet-list', { tweets, isAuthenticated: req.isAuthenticated(), currentUser: req.user})
     } catch (error) {
         next(error)
     }
