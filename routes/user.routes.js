@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { ensureAuthenticated } = require('../config/security.config.js');
-const {signup, signupForm, uploadImage, displayProfile} = require('../controllers/user.controller.js');
+const {signup, signupForm, uploadImage, displayProfile, userList} = require('../controllers/user.controller.js');
 
 //route pour inscrire un utiliasteaur
+router.get('/', userList);
 router.get('/signup/form', signupForm);
 router.post('/signup', signup);
 router.post('/update/image', ensureAuthenticated, uploadImage);

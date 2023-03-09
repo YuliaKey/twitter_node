@@ -2,7 +2,6 @@
 @import 'utilities/mixins';
 @import 'utilities/classes';
 
-
 @import 'base/reset';
 
 @import 'layout/header';
@@ -11,10 +10,11 @@
 
 @import 'components/buttons';
 @import 'components/tweet_card';
+@import 'components/tweet_form';
+@import 'components/search_bar';
 
 @import 'pages/home';
 @import 'pages/signin';
 @import 'pages/signup';
 @import 'pages/user_profile';
-
 
