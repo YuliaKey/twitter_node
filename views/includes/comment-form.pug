@@ -4,10 +4,10 @@ form(class="form-new" action=`/comment/new/${tweet._id}` method="post")
             a(href=`/user/${tweet.author.username}`) @#{tweet.author.username}
     .form-body 
         .form-item 
-            textarea(name="content" placeholder="Tweeter votre reponse")= tweet ? tweet.content : ""
+            textarea(name="message" placeholder="Tweeter votre reponse")
         if errors 
             ul
                 each error in errors 
-                    li= error
+                    li(class="text-danger")= error
         .form-item
             input(type="submit", value= "Commenter" class="btn btn-primary") 

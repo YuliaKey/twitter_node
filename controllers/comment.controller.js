@@ -1,3 +1,4 @@
+const { createNewComment } = require("../queries/comment.queries");
 const { findTweetById } = require("../queries/tweet.queries");
 
 

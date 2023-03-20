@@ -10,4 +10,6 @@ block content
                 if isAuthenticated
                     include ../includes/tweet-card.pug
                     include ../includes/comment-form.pug
+                    each comment in comments 
+                        include ../includes/comment-card.pug
                 
