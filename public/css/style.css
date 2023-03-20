@@ -121,17 +121,63 @@ a:hover {
   }
 }
 .profile-actions {
-  margin-left: 3rem;
+  width: 54%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (min-width: 576px) {
+  .profile-actions {
+    width: 60%;
+  }
 }
 @media (min-width: 768px) {
   .profile-actions {
-    margin-left: 25rem;
+    width: 70%;
   }
 }
 @media (min-width: 992px) {
   .profile-actions {
     margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
+}
+.profile-actions i {
+  font-size: 1.5rem;
+  color: white;
+  margin-left: 1.5rem;
+}
+@media (min-width: 992px) {
+  .profile-actions i {
+    color: #00ACEE;
+    margin-bottom: 1rem;
+    margin-left: 0;
+  }
+}
+.profile-actions i:hover {
+  cursor: pointer;
+  color: white !important;
+}
+@media (min-width: 992px) {
+  .profile-actions i:hover {
+    color: #00ACEE !important;
+  }
+}
+.profile-actions i span {
+  background-color: red;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 50%;
 }
 .profile-data {
   display: none;

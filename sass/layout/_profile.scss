@@ -51,15 +51,59 @@
     }
 
     &-actions {
-        margin-left: 3rem;
+        width: 54%;
+
+        @include flex($justify: flex-end);
+
+        @include sm {
+            width: 60%;
+        }
 
         @include md {
-            margin-left: 25rem;
+            width: 70%;
         }
 
         @include lg {
             margin: 2rem 0;
+            @include flex($direction: column)
         }
+
+      
+
+        i {
+            font-size: 1.5rem;
+            color: white;
+            margin-left: 1.5rem;
+
+            @include lg {
+                color: $primary-color;
+                margin-bottom: 1rem;
+                margin-left: 0;
+            }
+
+            &:hover {
+                cursor: pointer;
+                color: white !important;
+
+                @include lg {
+                    color: $primary-color !important;
+                }
+            }
+
+            span {
+                background-color: red;
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                font-size: 1rem;
+                padding: .5rem;
+                border-radius: 50%;
+            }
+        }
+
+        
+
     }
 
     &-data {
