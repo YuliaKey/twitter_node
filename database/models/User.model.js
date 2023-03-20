@@ -19,11 +19,18 @@ const userSchema = schema({
     },
     followers: { type: 
         [schema.Types.ObjectId], ref: 'user'
-    }
+    },
+    likedTweets: { type: [schema.Types.ObjectId], ref: 'tweet'}
 
 }, {
     timestamps: true
 })
+
+userSchema.virtual('fullname').get(function() {
+    return `${this.firstname} ${this.lastname}`;
+})
+
+
 
 userSchema.statics.hashPassword = async (password) => {
     try {

@@ -13,7 +13,12 @@ const tweetSchema = schema({
         type: schema.Types.ObjectId,
         ref: 'user', //referance a model User
         required: true
-    }
+    },
+    comment: {
+        type: [schema.Types.ObjectId],
+        ref: 'comment'
+    },
+    nbLikes: {type: Number, default: 0}
 }, {
     timestamps: true
 })

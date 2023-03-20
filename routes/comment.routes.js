@@ -1,8 +1,6 @@
 const router = require('express').Router()
 
-router.get('/', (req, res, next) => {
-    res.end()
-})
+router.get('/new/:tweetId', createComment)
 
 module.exports = router;
 

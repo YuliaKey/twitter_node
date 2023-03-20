@@ -19,7 +19,16 @@ exports.findTweetsFromUsername = (authorId) => {
 
 
 exports.findTweetById = (tweetId) => {
-    return Tweet.findById(tweetId).exec();
+    return Tweet
+        .findById(tweetId)
+        .populate('author')
+        .populate({
+            path: 'comments',
+            populate: {
+                path: 'author'
+            }
+        })
+        .exec();
 }
 
 exports.findTweetAndDelete = (tweetId) => {
@@ -28,4 +37,19 @@ exports.findTweetAndDelete = (tweetId) => {
 
 exports.findTweetAndUpdate = (tweetId, body) => {
     return Tweet.findByIdAndUpdate(tweetId, {$set: body}).exec();
+}
+
+exports.likeTweet = async (tweetId, user) => {
+    const tweet = await Tweet.findById(tweetId).exec()
+
+    if(!user.likedTweets.includes(tweet._id)) {
+        tweet.nbLikes++;
+        user.likedTweets.push(tweet._id)
+    } else {
+        tweet.nbLikes--;
+        user.likedTweets = user.likedTweets.filter(tId => tId.toString() !== tweetId.toString())
+    }
+
+    user.save();
+    return tweet.save();
 }

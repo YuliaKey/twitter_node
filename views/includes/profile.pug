@@ -12,7 +12,7 @@ if isAuthenticated
                 img#profile-image(src= currentUser.avatar, alt="")
         .profile-info
             h3 @#{currentUser.username}
-            p #{currentUser.firstname} #{currentUser.lastname}
+            p #{currentUser.fullname}
         .profile-data 
             
         .profile-actions
