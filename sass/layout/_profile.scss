@@ -68,12 +68,11 @@
             @include flex($direction: column)
         }
 
-      
-
         i {
             font-size: 1.5rem;
             color: white;
             margin-left: 1.5rem;
+            position: relative;
 
             @include lg {
                 color: $primary-color;
@@ -91,25 +90,32 @@
             }
 
             span {
-                background-color: red;
-                display: inline-block;
+
+                font-weight: 600;
+                display: block;
                 width: 20px;
                 height: 20px;
-                line-height: 20px;
+                line-height: 5px;
                 font-size: 1rem;
                 padding: .5rem;
                 border-radius: 50%;
+                margin-right: 1rem;
+
+                @include lg {
+                    display: inline-block;
+                }
             }
+
+
+
         }
-
-        
-
     }
 
     &-data {
         display: none;
 
         @include lg {
+            margin-top: 2rem;
             display: block;
             @include flex($direction: column)
         }

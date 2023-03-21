@@ -1,6 +1,6 @@
 if isAuthenticated
-    script(src="/js/upload-image.js") 
-    .profile 
+    script(src="/js/upload-image.js")
+    .profile
         .profile-img
             form(
                 id="form-container"
@@ -8,19 +8,19 @@ if isAuthenticated
                 method="post"
                 enctype="multipart/form-data"
             )
-                input(type="file", name="avatar" id="avatar" style="display: none") 
-                img#profile-image(src= currentUser.avatar, alt="")
+                input(type="file", name="avatar" id="avatar" style="display: none")
+                img#profile-image(src=currentUser.avatar, alt="")
         .profile-info
             h3 @#{currentUser.username}
             p #{currentUser.fullname}
+            p A rejoint twitter en #{currentUser.createdAt.toLocaleString('fr', {month: 'long'})} #{currentUser.createdAt.getFullYear()}
         .profile-data 
-            
-        .profile-actions
+        .profile-actions 
             i.fa-solid.fa-users
                 span= currentUser.followers.length
             i.fa-solid.fa-user-plus
                 span= currentUser.followings.length
-            i.fa-regular.fa-message
+            i.fa-regular.fa-message 
                 span 5
             a(href="/auth/signout")
                 i.fa-solid.fa-arrow-right-from-bracket

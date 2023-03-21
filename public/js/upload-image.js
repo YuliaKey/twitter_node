@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const inputAvatar = document.getElementById('avatar');
     const formContainer = document.getElementById('form-container')
 
-    imageProfile.addEventListener('click', () => {
+    imageProfile.addEventListener('click', (event) => {
         inputAvatar.click();
     })
 

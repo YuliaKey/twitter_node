@@ -12,9 +12,9 @@ block content
                 .user-profile-actions 
                     if currentUser.followings.includes(user._id.toString())
                         a(href=`/user/unfollow/${user._id}` class="btn btn-primary") unFollow
-                    else
+                    else 
                         a(href=`/user/follow/${user._id}` class="btn btn-primary") Follow
-
+                
             .user-profile-data 
                 .user-profile-data-posts
                     p Posts

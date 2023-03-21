@@ -3,20 +3,27 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 function likeTweet() {
-    console.log('toto')
+    console.log('toto');
     const allHearts = document.querySelectorAll('.fa-heart');
     const tweetsContainer = document.querySelector('.tweets-list-container');
 
+
     allHearts.forEach(element => {
         element.addEventListener('click', (event) => {
-            const tweetId = event.target.getAttribute('tweetid')
-            axios.get(`/tweet/like/${tweetId}`)
+            const tweetId = event.target.getAttribute('tweetid');
+            const isAuthenticated = event.target.getAttribute('authenticated')
+            
+            if (isAuthenticated === "yes") {
+                axios.get(`/tweet/like/${tweetId}`)
                 .then(response => {
                     console.log(response.data)
-                    tweetsContainer.innerHtml = ''
-                    tweetsContainer.innerHtml = response.data;
-                    likeTweet();
+                    tweetsContainer.innerHTML = ''
+                    tweetsContainer.innerHTML = response.data
+                    likeTweet()
                 })
+            } else {
+                location.assign('/auth/signin/form')
+            } 
         })
     })
 }

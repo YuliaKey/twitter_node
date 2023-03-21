@@ -152,6 +152,7 @@ a:hover {
   font-size: 1.5rem;
   color: white;
   margin-left: 1.5rem;
+  position: relative;
 }
 @media (min-width: 992px) {
   .profile-actions i {
@@ -170,20 +171,27 @@ a:hover {
   }
 }
 .profile-actions i span {
-  background-color: red;
-  display: inline-block;
+  font-weight: 600;
+  display: block;
   width: 20px;
   height: 20px;
-  line-height: 20px;
+  line-height: 5px;
   font-size: 1rem;
   padding: 0.5rem;
   border-radius: 50%;
+  margin-right: 1rem;
+}
+@media (min-width: 992px) {
+  .profile-actions i span {
+    display: inline-block;
+  }
 }
 .profile-data {
   display: none;
 }
 @media (min-width: 992px) {
   .profile-data {
+    margin-top: 2rem;
     display: block;
     display: flex;
     flex-direction: column;
@@ -277,6 +285,12 @@ a:hover {
     margin: 1rem auto;
   }
 }
+.tweet-card p {
+  font-weight: 600;
+}
+.tweet-card .fa-retweet {
+  margin: 1rem;
+}
 .tweet-card-author {
   width: 100%;
   border: 1px solid #ddd;
@@ -337,7 +351,7 @@ a:hover {
   color: #00ACEE;
 }
 
-.form-item {
+.form-new {
   width: 100%;
   padding: 1rem;
   border-bottom: 1px solid #ddd;
@@ -349,34 +363,34 @@ a:hover {
   flex-wrap: wrap;
 }
 @media (min-width: 576px) {
-  .form-item {
+  .form-new {
     border: 1px solid #ddd;
     border-radius: 0.5rem;
   }
 }
-.form-item .form-title h4 {
+.form-new .form-title h4 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
-.form-item .form-body {
+.form-new .form-body {
   width: 100%;
 }
-.form-item .form-body .form-item {
+.form-new .form-body .form-item {
   width: 100%;
 }
-.form-item .form-body .form-item textarea, .form-item .form-body .form-item input {
+.form-new .form-body .form-item textarea, .form-new .form-body .form-item input {
   width: 100%;
   border: none;
   resize: none;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
 }
-.form-item .form-body .form-item textarea {
+.form-new .form-body .form-item textarea {
   border: 1px solid #ddd;
   height: 7rem;
   padding: 1rem;
 }
-.form-item .form-body .form-item input {
+.form-new .form-body .form-item input {
   font-size: 1rem;
 }
 
@@ -387,7 +401,7 @@ a:hover {
   padding: 0.5rem 1.5rem;
   background-color: white;
   border-radius: 5px;
-  border: 1 px solid #ddd;
+  border: 1px solid #ddd;
 }
 .search-bar form input {
   border: none;
@@ -432,6 +446,10 @@ a:hover {
 }
 .search-bar #search-menu-container .search-menu-result .search-user span {
   margin-left: 1rem;
+}
+
+.tweets-list-container {
+  width: 100%;
 }
 
 .content-box {

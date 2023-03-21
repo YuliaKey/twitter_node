@@ -5,7 +5,7 @@
         padding: .5rem 1.5rem;
         background-color: white;
         border-radius: 5px;
-        border: 1 px solid #ddd;
+        border: 1px solid #ddd;
 
         input {
             border: none;
@@ -33,6 +33,7 @@
             .search-user {
                 width: 100%;
                 padding: .5rem;
+
                 @include flex($justify: flex-start);
 
                 &:hover {
@@ -41,12 +42,14 @@
                 }
 
                 img {
-                    border-radius: 50%;
+                    border-radius: 50%;;
                 }
 
                 span {
                     margin-left: 1rem;
                 }
+
+                
             }
         }
     }

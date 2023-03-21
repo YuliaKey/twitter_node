@@ -1,23 +1,40 @@
 .tweet-card
+    if tweet.retweeted.status
+        if isAuthenticated && tweet.author._id.toString() === curentUser._id.toString()
+            p 
+                i.fa-solid.fa-retweet
+                | Vous avez retweeté :
+        else
+            p 
+                i.fa-solid.fa-retweet
+                | #{tweet.author.fullname} a retweete :
     .tweet-card-author
-        .tweet-card-author-data 
-            img(src= tweet.author.avatar, alt="")
-            a(href=`/user/${tweet.author.username}`) 
-                p @#{tweet.author.username}
+        .tweet-card-author-data
+            if tweet.retweeted.status
+                img(src=tweet.retweeted.initialAuthor.avatar, alt="")
+                a(href=`/user/${tweet.author.username}`)
+                    p @#{tweet.retweeted.initialAuthor.username}
+                p= moment(tweet.createdAt).locale('fr').fromNow()
+            else
+                img(src=tweet.author.avatar, alt="")
+                a(href=`/user/${tweet.author.username}`)
+                    p @#{tweet.author.username}
+                p= moment(tweet.createdAt).locale('fr').fromNow()
         if currentUser 
             if tweet.author._id.toString() === currentUser._id.toString()
-                .tweet-card-author-actions
+                .tweet-card-author-actions 
                     a(href=`/tweet/edit/${tweet._id}`) 
-                        i.fa-solid.fa-pen-to-square    
+                        i.fa-solid.fa-pen-to-square
                     a(href=`/tweet/delete/${tweet._id}`) 
                         i.fa-solid.fa-xmark
+            
 
     .tweet-card-body= tweet.content
-    .tweet-card-actions 
+    .tweet-card-actions
         a(href=`/tweet/${tweet._id}`) 
-            i.fa-comment(class= tweet.comments.length > 0 ? 'fa-solid' : 'fa-regular')
+            i.fa-comment(class= tweet.comments.length > 0 ? 'fa-solid': 'fa-regular')
             span= tweet.comments.length
-
-        i.fa-heart(class= tweet.nbLikes > 0 ? 'fa-solid' : 'fa-regular' tweetId = tweet._id)
+        i.fa-heart(class= tweet.nbLikes > 0 ? 'fa-solid' : 'fa-regular' tweetid = tweet._id) 
             span= tweet.nbLikes
-        i.fa-regular.fa-share-from-square
+        a(href=`/tweet/share/${tweet._id}`) 
+            i.fa-regular.fa-share-from-square

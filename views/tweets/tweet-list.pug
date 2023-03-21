@@ -1,16 +1,15 @@
-extends ../layout.pug
+extends ../layout.pug 
 
 block content 
-    script(src="/js/likeTweet.js")
+    script(src="/js/likeTweet.js") 
     .content
         if isAuthenticated
             .profile-container
-                include ../includes/profile.pug 
+                include  ../includes/profile.pug
         .tweets-container
-            .tweets-list
+            .tweets-list 
                 if isAuthenticated
                     include ../includes/tweet-form.pug
                 .tweets-list-container
                     include ../includes/tweet-list.pug
-                        
-                        
+

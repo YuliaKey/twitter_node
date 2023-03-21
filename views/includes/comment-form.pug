@@ -1,7 +1,7 @@
 form(class="form-new" action=`/comment/new/${tweet._id}` method="post")
     .form-title
-        h4= Repondre a 
-            a(href=`/user/${tweet.author.username}`) @#{tweet.author.username}
+        h4 Repondre a 
+            a(href=`/user/${tweet.author.username}`) @#{tweet.author.username} 
     .form-body 
         .form-item 
             textarea(name="message" placeholder="Tweeter votre reponse")
@@ -9,5 +9,5 @@ form(class="form-new" action=`/comment/new/${tweet._id}` method="post")
             ul
                 each error in errors 
                     li(class="text-danger")= error
-        .form-item
-            input(type="submit", value= "Commenter" class="btn btn-primary") 
+        .form-item 
+            input(type="submit", value="Commenter" class="btn btn-primary")
