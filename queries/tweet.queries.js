@@ -89,7 +89,7 @@ exports.retweet = async (tweetId, userId) => {
     const sharedTweet = new Tweet({
         content: tweet.content,
         author: userId,
-        retweetd: {
+        retweeted: {
             status: true,
             initialAuthor: tweet.author._id
         }
